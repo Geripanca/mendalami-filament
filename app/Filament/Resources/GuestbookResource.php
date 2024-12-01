@@ -46,13 +46,16 @@ class GuestbookResource extends Resource
         return $table
             ->columns([
                 //
-                TextColumn::make('name'),
+                TextColumn::make('name')
+                    ->searchable()
+                    ->sortable(),
                 TextColumn::make('email'),
                 TextColumn::make('message')->wrap(),
             ])
             ->filters([
                 //
             ])
+            ->defaultSort('name', 'ASC')
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()

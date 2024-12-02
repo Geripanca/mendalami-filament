@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@admin.com',
         ]);
         $this->call(GuestbookSeeder::class);
+        $this->call(BarangSeeder::class);
+
 
     }
 }
